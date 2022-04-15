@@ -1,4 +1,5 @@
 {
+  "homepage": "http://zidgmundfreid.github.io/zidgmundfreid.PizzaReact-Redux.github.io",
   "name": "react-pizza",
   "version": "0.1.0",
   "private": true,
@@ -65,6 +66,8 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
@@ -143,7 +146,9 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
   "author": "",
   "license": "ISC"
 }
