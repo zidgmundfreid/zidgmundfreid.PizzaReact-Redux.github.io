@@ -8,7 +8,7 @@ import { setPizzas as setPizzasAction } from './redux/actions/pizzas';
 
 class App extends React.Component {
   componentDidMount() {
-    axios.get('http://localhost:3000/db.json').then(({ data }) => {
+    axios.get('http://localhost:3000/zidgmundfreid.PizzaReact-Redux.github.io/db.json').then(({ data }) => {
       this.props.setPizzas(data.pizzas);
     });
   }
@@ -33,6 +33,7 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     items: state.pizzas.items,
+    filters: state.filters
   };
 };
 
