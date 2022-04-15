@@ -20,7 +20,7 @@ class App extends React.Component {
           <div className="wrapper">
             <Header />
             <div className="content">
-              <Route path="/" render={() => <Home items={this.props.items} />} exact />
+              <Route path="/zidgmundfreid.PizzaReact-Redux.github.io/" render={() => <Home items={this.props.items} />} exact />
               <Route path="/cart" component={Cart} exact />
             </div>
           </div>
