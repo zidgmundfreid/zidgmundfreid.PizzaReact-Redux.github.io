@@ -4,7 +4,7 @@ import { Cart, Home } from './pages';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { setPizzas } from './redux/actions/pizzas';
+import { setPizzas as setPizzasAction } from './redux/actions/pizzas';
 
 class App extends React.Component {
   componentDidMount() {
@@ -13,7 +13,7 @@ class App extends React.Component {
     });
   }
   render() {
-    console.log(this.props)
+    console.log(this.props);
     return (
       <div className="App">
         <div>
@@ -33,12 +33,13 @@ class App extends React.Component {
 const mapStateToProps = (state) => {
   return {
     items: state.pizzas.items,
-    filters: state.filters,
   };
 };
 
-const mapDispatchToProps = {
-  setPizzas
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setPizzas: (items) => dispatch(setPizzasAction(items)),
+  };
 };
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);
